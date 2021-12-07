@@ -51,4 +51,4 @@ mysql> SET PASSWORD FOR testuser@localhost = PASSWORD('password');
 
 mysql> use TESTDB;
 ```
-mysql> [CREATE TABLE](MySQL_CREATE_TABLE.sql)
+mysql> [CREATE TABLE rss](MySQL_CREATE_TABLE.sql)
