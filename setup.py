@@ -2,8 +2,8 @@ import platform
 import sys
 
 Envs = {
-   'U18PB1-0717': {
-       'OutPath': '/home-mc/core.choi/workspace/temp/clien_rss/',
+   'instance-20211207-2143': {
+       'OutPath': '/home/ubuntu/workspace/clien_rss/',
        'db': 'TEST_DB',
        'table': 'rss'
    },
@@ -46,7 +46,7 @@ Tasks = {
 
 def getWorkDict():
     run_loc = platform.node()
-    # print(run_loc)
+    print(run_loc)
     if run_loc in Envs:
         WorkEnv = Envs[run_loc]
     else:

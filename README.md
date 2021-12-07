@@ -15,6 +15,11 @@ Additional python module:
 
 [web-site](https://slowlifecoding.blogspot.com/2017/08/build-clien-rss-by-python3.html)  
 
+### pip install
+```
+sudo apt install default-libmysqlclient-dev
+pip install -r requirements.txt
+```
 
 ### mysql install  
 ```shell

@@ -1,0 +1,5 @@
+bs4
+PyRSS2Gen
+mysqlclient
+mysql-connector
+mysql-connector-python
