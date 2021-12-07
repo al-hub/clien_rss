@@ -49,6 +49,6 @@ mysql> SHOW GRANTS FOR testuser@localhost;
 
 mysql> SET PASSWORD FOR testuser@localhost = PASSWORD('password');
 
-mysql> use TESTDB;
+mysql> use TEST_DB;
 ```
 mysql> [CREATE TABLE rss](MySQL_CREATE_TABLE.sql)
