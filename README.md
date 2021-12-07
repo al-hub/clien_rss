@@ -13,3 +13,42 @@ Additional python module:
     RyRSS2Gen,
     BeautifulSoup from BS4
 
+[web-site](https://slowlifecoding.blogspot.com/2017/08/build-clien-rss-by-python3.html)  
+
+
+### mysql install  
+```shell
+sudo apt-get update
+sudo apt-get install mysql-server
+```
+  
+### mysql setting  
+```shell
+sudo ufw allow mysql
+sudo systemctl start mysql
+sudo systemctl enable mysql
+```
+
+### mysql make DB and Tables  
+exampe) TESTDB
+```shell
+sudo /usr/bin/mysql -u root -p
+
+mysql> SELECT User, Host, authentication_string FROM mysql.user;
+
+mysql> CREATE DATABASE TESTDB;
+mysql> SHOW DATABASES;
+
+mysql> CREATE USER testuser@localhost IDENTIFIED BY 'password';
+mysql> FLUSH PRIVILEGES;
+mysql> SELECT User, Host, authentication_string FROM mysql.user;
+
+mysql> GRANT ALL PRIVILEGES ON TESTDB.* to testuser@localhost;
+mysql> FLUSH PRIVILEGES;
+mysql> SHOW GRANTS FOR testuser@localhost;
+
+mysql> SET PASSWORD FOR testuser@localhost = PASSWORD('password');
+
+mysql> use TESTDB;
+```
+mysql> [CREATE TABLE](MySQL_CREATE_TABLE.sql)
