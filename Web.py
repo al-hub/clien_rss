@@ -38,6 +38,7 @@ def Build_RSS(r_path, r_filename, r_home, r_desc):
 
 
 def Parsing_BBS(site, link, rep_cond, rec_cond, t_home, rss_name):
+    print('Parsing')
     if site == 'clien':
         Parsing_BBS_Clien(link, rep_cond, rec_cond, t_home, rss_name)
 
@@ -50,13 +51,15 @@ def Parsing_BBS_Clien(link, rep_cond, rec_cond, t_home, rss_name):
     # Parsing
     html = Read_Html(link)
     soup = BeautifulSoup(html, "html.parser")
-    elements = soup.findAll("div", {"class": "item"})
+    elements = soup.findAll("div", {"class": "list_item"})
 
     for el in elements:
         # Pass notice item
         if el.encode('utf-8').find('<span>공지</span>'.encode('utf-8')) > -1:
             continue
-
+        if el.encode('utf-8').find('hongboInfoList'.encode('utf-8')) > -1:
+            continue
+ 
         # check pub date, break for old posting, risky code
         pubdate = el.find("span", {"class": "timestamp"}).text.strip()
         if date(pubdate) < deadline and rep_cond == 0:
@@ -83,12 +86,14 @@ def Parsing_BBS_Clien(link, rep_cond, rec_cond, t_home, rss_name):
                 # pub_date = pdate[0].text.strip()
 
                 # Parsing Author
-                auth1 = soup.findAll("button", {"class": "button-md button-report"})
-                author = re.search("[\w]+(?=\')", str(auth1[0])).group()
+                #auth1 = soup.findAll("button", {"class": "button-md button-report"})
+                #author = re.search("[\w]+(?=\')", str(auth1[0])).group()
+                author = "rsser"
+                print(author)
 
                 # Post Info Insert to DB
                 MariaDB.InsertSQL(rss_name, category, title, text, url, pubdate, author, r_count, s_count)
-        continue
+            continue
 
 
 def Read_Html(link):
@@ -117,6 +122,6 @@ def get_number(elements):
 
 
 # Module Test Code
-# s1 = 'clien'
-# u1 = 'https://www.clien.net/service/board/news?&po=0'
-# Parsing_BBS(s1, u1, 0, 0, 'https://www.clien.net', 'test_rss')
+#s1 = 'clien'
+#u1 = 'https://www.clien.net/service/board/news?&po=0'
+#Parsing_BBS(s1, u1, 0, 0, 'https://www.clien.net', 'TESTDB')

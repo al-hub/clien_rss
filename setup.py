@@ -2,7 +2,12 @@ import platform
 import sys
 
 Envs = {
-   'PCName': {
+   'U18PB1-0717': {
+       'OutPath': '/home-mc/core.choi/workspace/temp/clien_rss/',
+       'db': 'TEST_DB',
+       'table': 'rss'
+   },
+  'PCName': {
        'OutPath': 'YourOutPathForPC/',
        'db': 'YourTestDBname',
        'table': 'YourTestTableNameForPC'
@@ -20,45 +25,19 @@ Tasks = {
         'site_bbs': '/service/board/',
         'feed_url': 'http://feeds.feedburner.com/',
         'rss_item': {
-            'hot50': {
-                'bbs_list': {
-                    'park',
-                    'news',
-                    'jirum',
-                    'coupon',
-                    'lecture',
-                    'use',
-                    'cm_iphonien',
-                    'cm_car',
-                    'cm_bike',
-                    'cm_havehome',
-                    'cm_nas'
-                    },
-                'rss_desc': 'Clien: Hot 50',
-                'r_cond': 50,
-                's_page': 4,
-                'f_name': 'your_feedburner_feed_name'
-            },
-            'news': {
-                'bbs_list': {'news'},
-                'rss_desc': 'Clien: News',
+            'stock': {
+                'bbs_list': {'cm_stock'},
+                'rss_desc': 'Clien: Stock',
                 'r_cond': 0,
                 's_page': 1,
-                'f_name': 'your_feedburner_feed_name'
+                'f_name': 'c_news'
             },
             'jirum': {
                 'bbs_list': {'jirum'},
                 'rss_desc': 'Clien: Good Shoping',
                 'r_cond': 0,
                 's_page': 1,
-                'f_name': 'your_feedburner_feed_name'
-            },
-            'coupon': {
-                'bbs_list': {'coupon'},
-                'rss_desc': 'Clien: Counpon',
-                'r_cond': 0,
-                's_page': 1,
-                'f_name': 'your_feedburner_feed_name'
+                'f_name': 'c_news'
             }
         }
     }

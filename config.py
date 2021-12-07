@@ -1,5 +1,5 @@
-mysql_server = "YourMySQL_ip"
-mysql_id = "YourMySQL_ID"
-mysql_password = "YourMySQL_Password"
-mysql_db = "YourDB_Name"
+mysql_server = "localhost"
+mysql_id = "testuser"
+mysql_password = "password"
+mysql_db = "TEST_DB"
 mysql_port = 3306

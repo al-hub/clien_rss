@@ -8,7 +8,6 @@ MariaTable = CurEnv['table']
 # print(MariaDB)
 # print(MariaTable)
 
-
 def ReadSQL(rss_name):
     query = "SELECT * FROM " + MariaTable
     query += " WHERE file = %(rss_name)s order by pubdate DESC limit 80"
@@ -65,7 +64,7 @@ def InsertSQL(hfile, category, title, text, url, pubdate, author, rep, rec):
 def QuerySQL(Query, Data, Return=False):
     conn = MySQLdb.connect(
         host=config.mysql_server, user=config.mysql_id,
-        passwd=config.mysql_password, db=MariaDB, port=3307, charset='utf8')
+        passwd=config.mysql_password, db=MariaDB, port=3306, charset='utf8')
     curs = conn.cursor(dictionary=True)
     curs.execute(Query, Data)
     result = None
@@ -73,7 +72,6 @@ def QuerySQL(Query, Data, Return=False):
         result = curs.fetchall()
     conn.commit()
     return result
-
 
 # d1 = datetime.datetime.now()
 # deadline = datetime.datetime.now() - datetime.timedelta(hours=8)
