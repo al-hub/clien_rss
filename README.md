@@ -30,20 +30,20 @@ sudo systemctl enable mysql
 ```
 
 ### mysql make DB and Tables  
-exampe) TESTDB
+exampe) TEST_DB
 ```shell
 sudo /usr/bin/mysql -u root -p
 
 mysql> SELECT User, Host, authentication_string FROM mysql.user;
 
-mysql> CREATE DATABASE TESTDB;
+mysql> CREATE DATABASE TEST_DB;
 mysql> SHOW DATABASES;
 
 mysql> CREATE USER testuser@localhost IDENTIFIED BY 'password';
 mysql> FLUSH PRIVILEGES;
 mysql> SELECT User, Host, authentication_string FROM mysql.user;
 
-mysql> GRANT ALL PRIVILEGES ON TESTDB.* to testuser@localhost;
+mysql> GRANT ALL PRIVILEGES ON TEST_DB.* to testuser@localhost;
 mysql> FLUSH PRIVILEGES;
 mysql> SHOW GRANTS FOR testuser@localhost;
 
