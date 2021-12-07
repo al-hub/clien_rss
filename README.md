@@ -78,7 +78,7 @@ crontab -e
 
 
 ### firewall & [feedburner](https://feedburner.google.com/fb/a/myfeeds)
-security port open in VM (as oracle)
+security port open in VM (as oracle, don't foget ssh-keygen from client pc)
 ```
 sudo iptables -I INPUT -p tcp -m tcp --dport 80 -j ACCEPT
 sudo iptables -I INPUT 1 -p tcp --dport 443 -j ACCEPT
