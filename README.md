@@ -58,4 +58,32 @@ mysql> use TEST_DB;
 ```
 mysql> [CREATE TABLE rss](MySQL_CREATE_TABLE.sql)
 
+### apache   
 
+```
+sudo apt-get install apache2
+apache2 -V
+service apache2 status
+
+sudo apt install net-tools
+netstat -ntlp 
+```
+
+### crontab  
+sudo chmod 777 /var/www/ -R  
+crontab -e  
+```
+*/30 * * * *  python3 /home/ubuntu/workspace/clien_rss/MainRSS.py
+```
+
+
+### firewall & [feedburner](https://feedburner.google.com/fb/a/myfeeds)
+security port open in VM (as oracle)
+```
+sudo iptables -I INPUT -p tcp -m tcp --dport 80 -j ACCEPT
+sudo iptables -I INPUT 1 -p tcp --dport 443 -j ACCEPT
+sudo iptables -nvL
+
+cd /etc/iptables/
+sudo iptables-save > iptables.bak
+```

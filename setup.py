@@ -3,7 +3,7 @@ import sys
 
 Envs = {
    'instance-20211207-2143': {
-       'OutPath': '/home/ubuntu/workspace/clien_rss/',
+       'OutPath': '/var/www/html/',
        'db': 'TEST_DB',
        'table': 'rss'
    },
@@ -27,10 +27,10 @@ Tasks = {
         'rss_item': {
             'stock': {
                 'bbs_list': {'cm_stock'},
-                'rss_desc': 'Clien: Stock',
+                'rss_desc': 'clien: stock',
                 'r_cond': 0,
                 's_page': 1,
-                'f_name': 'c_news'
+                'f_name': 'clien_stock'
             },
             'jirum': {
                 'bbs_list': {'jirum'},
